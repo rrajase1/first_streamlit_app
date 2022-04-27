@@ -26,3 +26,8 @@ streamlit.dataframe(fruityvice_normalized)
 #Snowflake connection
 
 my_snowCnx=snowflake.connector.connect(**streamlit.secrets["snowflake"])
+my_cur=my_snowCnx.cursor()
+my_cur.execute("select current_user(),current_account(),current_region()")
+mydata_row=my_cur.fetchone()
+streamlit.text("Snow Flake Data:")
+streamlit.text(mydata_row)
