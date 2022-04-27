@@ -70,6 +70,7 @@ try:
   else:
     fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/"+user_text)
     fruityvice_normalized=pandas.json_normalize(fruityvice_response.json())
+    #mycomment
     streamlit.dataframe(fruityvice_normalized)
 except URLError as e:
   streamlit.error()
