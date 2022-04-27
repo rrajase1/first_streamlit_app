@@ -45,3 +45,7 @@ streamlit.text("Fruit Load List - All:")
 streamlit.text(mydata_row)
 streamlit.text("Dataframe:")
 streamlit.dataframe(mydata_row)
+
+streamlit.neader("Pick yor Fruit")
+streamlit.textbox()
+
