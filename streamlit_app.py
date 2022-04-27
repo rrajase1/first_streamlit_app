@@ -15,7 +15,7 @@ def get_fruitloadList():
 def ins_dataSnowFlake(new_fruit):
     with my_snowCnx.cursor() as my_cur:
         my_cur.execute("insert into fruit_load_list values("+new_fruit+")")
-        return "Thanks for adding:",new_fruit)  
+        return "Thanks for adding:"+new_fruit)  
     
 st.header('Fruityvice Application\'s')
 st.title("Get Fruit list")
