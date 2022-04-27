@@ -21,4 +21,4 @@ if st.button('Click Here'):
         mydata_rows=get_fruitloadList()
         st.dataframe(mydata_rows)
     except URLError as e:
-    streamlit.error()
+    st.error()
