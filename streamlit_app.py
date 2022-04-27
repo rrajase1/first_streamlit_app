@@ -31,3 +31,8 @@ my_cur.execute("select current_user(),current_account(),current_region()")
 mydata_row=my_cur.fetchone()
 streamlit.text("Snow Flake Data:")
 streamlit.text(mydata_row)
+
+my_cur.execute("select * from fruit_load_list")
+mydata_row=my_cur.fetchone()
+streamlit.text("Fruit Load List - First one:")
+streamlit.text(mydata_row)
