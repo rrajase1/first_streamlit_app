@@ -26,5 +26,5 @@ if st.button('Click Here'):
 
 st.header("Pick yor Fruit")
 user_text=st.text_input("Pick yor Fruit")
-backfrom_function=ins_dataSnowFlake(user_text)
-st.dataframe(backfrom_function)
+#backfrom_function=ins_dataSnowFlake(user_text)
+#st.dataframe(backfrom_function)
