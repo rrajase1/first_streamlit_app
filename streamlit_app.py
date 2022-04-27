@@ -14,10 +14,10 @@ def get_fruitloadList():
         return my_cur.fetchall()
 st.header('Fruityvice Application\'s')
 st.title("Get Fruit list")
+try:
 if st.button('Click Here'):
         my_snowCnx=snowflake.connector.connect(**st.secrets["snowflake"])
-        try:
         mydata_rows=get_fruitloadList()
         st.dataframe(mydata_rows)
-        except:
-        st.error()
+except:
+st.error()
