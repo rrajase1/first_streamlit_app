@@ -51,4 +51,6 @@ streamlit.dataframe(mydata_row)
 #Adding textbox
 streamlit.header("Pick yor Fruit")
 user_text=streamlit.text_input("Pick yor Fruit")
-streamlit.text(user_text)
+streamlit.write("Thanks for adding:",user_text)
+
+my_cur.execute("insert into fruit_load_list values('from streamlit')")
