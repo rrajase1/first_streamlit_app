@@ -16,5 +16,8 @@ st.header('Fruityvice Application\'s')
 st.title("Get Fruit list")
 if st.button('Click Here'):
         my_snowCnx=snowflake.connector.connect(**st.secrets["snowflake"])
+        try:
         mydata_rows=get_fruitloadList()
         st.dataframe(mydata_rows)
+        except URLError as e:
+          st.error()
