@@ -9,7 +9,7 @@ from urllib.error import URLError
   def get_fruityvice_data(selected_fruit):
     fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/"+selected_fruit)
     fruityvice_normalized=pandas.json_normalize(fruityvice_response.json())
-    return streamlit.dataframe(fruityvice_normalized)
+    return fruityvice_normalized
   
 streamlit.title('my streamlit title\'s')
 streamlit.text('i can type anything here')
