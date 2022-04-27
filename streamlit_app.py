@@ -67,5 +67,7 @@ try:
   user_text=streamlit.text_input("Fruit to get advice")
   if not user_text:
       streamlit.error('Please select a fruit')
+  else:
+    fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/"+user_text)
 except URLError as e:
   streamlit.error()
