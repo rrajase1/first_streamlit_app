@@ -14,7 +14,11 @@ def get_fruitloadList():
         return my_cur.fetchall()
 st.header('Fruityvice Application\'s')
 st.title("Get Fruit list")
-#snowflake connection
-my_snowCnx=snowflake.connector.connect(**st.secrets["snowflake"])
-mydata_rows=get_fruitloadList()
-st.dataframe(mydata_rows)
+if st.button('Click Here'):
+    try:
+        #snowflake connection
+        my_snowCnx=snowflake.connector.connect(**st.secrets["snowflake"])
+        mydata_rows=get_fruitloadList()
+        st.dataframe(mydata_rows)
+    except URLError as e:
+    streamlit.error()
