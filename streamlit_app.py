@@ -49,5 +49,6 @@ streamlit.dataframe(mydata_row)
 #Adding textbox
 streamlit.header("Pick yor Fruit")
 user_text=streamlit.text_input("Pick yor Fruit")
-st.write(my_model.predict(user_text))
+#st.write(my_model.predict(user_text))
+streamlit.text(user_text)
 
