@@ -67,8 +67,3 @@ try:
   user_text=streamlit.text_input("Fruit to get advice")
   if not user_text:
     streamlit.error('Please select a fruit')
-  else:
-    fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/"+user_text)
-    fruityvice_normalized=pandas.json_normalize(fruityvice_response.json())
-    #output to screen
-    streamlit.dataframe(fruityvice_normalized)
