@@ -65,5 +65,5 @@ streamlit.header('Fruitywise fruit advice:')
 #user_text=streamlit.text_input("Fruit to get advice",'kiwi')
 try:
   user_text=streamlit.text_input("Fruit to get advice")
-  if not user_text:
-    streamlit.error('Please select a fruit')
+except URLError as e:
+  streamlit.error()
