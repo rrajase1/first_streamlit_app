@@ -24,7 +24,7 @@ if st.button('Click Here'):
         mydata_rows=get_fruitloadList()
         st.dataframe(mydata_rows)
 
-streamlit.header("Pick yor Fruit")
-user_text=streamlit.text_input("Pick yor Fruit")
+st.header("Pick yor Fruit")
+user_text=st.text_input("Pick yor Fruit")
 backfrom_function=ins_dataSnowFlake(user_text)
 st.dataframe(backfrom_function)
