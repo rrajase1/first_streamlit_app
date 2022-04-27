@@ -68,9 +68,12 @@ try:
   if not user_text:
       streamlit.error('Please select a fruit')
   else:
+    /* 
+    # non function method
     fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/"+user_text)
     fruityvice_normalized=pandas.json_normalize(fruityvice_response.json())
     #mycomment
     streamlit.dataframe(fruityvice_normalized)
+    */
 except URLError as e:
   streamlit.error()
