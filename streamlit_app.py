@@ -26,3 +26,9 @@ if st.button('Click Here'):
         st.dataframe(mydata_rows)
 #except:
 #st.error()
+
+#Adding textbox
+streamlit.header("Pick yor Fruit")
+user_text=streamlit.text_input("Pick yor Fruit")
+backfrom_function=ins_dataSnowFlake(user_text)
+st.dataframe(backfrom_function)
