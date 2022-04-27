@@ -16,6 +16,6 @@ st.header('Fruityvice Application\'s')
 st.title("Get Fruit list")
 if st.button('Click Here'):
         #snowflake connection
-        my_snowCnx=st.connector.connect(**st.secrets["snowflake"])
+        my_snowCnx=snowflake.connector.connect(**st.secrets["snowflake"])
         mydata_rows=get_fruitloadList()
         st.dataframe(mydata_rows)
