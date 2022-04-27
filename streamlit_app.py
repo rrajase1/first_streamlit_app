@@ -4,6 +4,7 @@ import pandas
 #import pandas as pd
 import requests
 import snowflake.connector
+from urlib.error import URLError
 streamlit.title('my streamlit title\'s')
 streamlit.text('i can type anything here')
 streamlit.text('as much as i like ')
@@ -33,6 +34,9 @@ my_cur.execute("select current_user(),current_account(),current_region()")
 mydata_row=my_cur.fetchone()
 streamlit.text("Snow Flake Data:")
 streamlit.text(mydata_row)
+
+## don't run anything after here.
+streamlit.stop()
 
 my_cur.execute("select * from fruit_load_list")
 mydata_row=my_cur.fetchone()
