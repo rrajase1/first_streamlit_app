@@ -36,7 +36,7 @@ streamlit.text("Snow Flake Data:")
 streamlit.text(mydata_row)
 
 ## don't run anything after here.
-streamlit.stop()
+#streamlit.stop()
 streamlit.text("commencted lines")
 
 my_cur.execute("select * from fruit_load_list")
@@ -58,4 +58,8 @@ streamlit.header("Pick yor Fruit")
 user_text=streamlit.text_input("Pick yor Fruit")
 streamlit.write("Thanks for adding:",user_text)
 
-my_cur.execute("insert into fruit_load_list values('from streamlit')")
+#my_cur.execute("insert into fruit_load_list values('from streamlit')")
+
+## new section to display fruitywise api advice
+streamlit.header('Fruitywise fruit advice:')
+user_text=streamlit.text_input("Fruit to get advice",'kiwi')
