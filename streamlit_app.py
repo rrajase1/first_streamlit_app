@@ -37,6 +37,7 @@ streamlit.text(mydata_row)
 
 ## don't run anything after here.
 streamlit.stop()
+streamlit.text("commencted lines")
 
 my_cur.execute("select * from fruit_load_list")
 mydata_row=my_cur.fetchone()
