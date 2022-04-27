@@ -70,8 +70,19 @@ try:
   else:
     # non function method start
     #fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/"+user_text)
-    fruityvice_normalized=pandas.json_normalize(fruityvice_response.json())
-    streamlit.dataframe(fruityvice_normalized)
+    #fruityvice_normalized=pandas.json_normalize(fruityvice_response.json())
+    #streamlit.dataframe(fruityvice_normalized)
     # non function method end
+    
+    #function method start
+      backfrom_function=get_fruityvice_data(user_text)
+      streamlit.dataframe(backfrom_function)
+    #function method end
 except URLError as e:
   streamlit.error()
+
+  #function def
+  def get_fruityvice_data(selected_fruit)
+    fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/"+selected_fruit)
+    fruityvice_normalized=pandas.json_normalize(fruityvice_response.json())
+    streamlit.dataframe(fruityvice_normalized)
