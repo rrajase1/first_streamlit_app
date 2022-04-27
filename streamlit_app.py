@@ -36,3 +36,8 @@ my_cur.execute("select * from fruit_load_list")
 mydata_row=my_cur.fetchone()
 streamlit.text("Fruit Load List - First one:")
 streamlit.text(mydata_row)
+
+my_cur.execute("select * from fruit_load_list")
+mydata_row=my_cur.fetchall()
+streamlit.text("Fruit Load List - All:")
+streamlit.text(mydata_row)
