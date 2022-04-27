@@ -46,6 +46,7 @@ streamlit.text(mydata_row)
 streamlit.text("Dataframe:")
 streamlit.dataframe(mydata_row)
 
+#Adding textbox
 streamlit.neader("Pick yor Fruit")
-streamlit.textbox()
+streamlit.text_input("Pick yor Fruit")
 
