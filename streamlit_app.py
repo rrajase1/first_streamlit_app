@@ -22,3 +22,7 @@ streamlit.text(fruityvice_response.json())
 fruityvice_normalized=pandas.json_normalize(fruityvice_response.json())
 #output to screen
 streamlit.dataframe(fruityvice_normalized)
+
+#Snowflake connection
+
+my_snowCnx=snowflake.connector.connect(**streamlit.secrets["snowflake"])
