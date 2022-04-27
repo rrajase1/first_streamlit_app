@@ -19,15 +19,11 @@ def ins_dataSnowFlake(new_fruit):
     
 st.header('Fruityvice Application\'s')
 st.title("Get Fruit list")
-#try:
 if st.button('Click Here'):
         my_snowCnx=snowflake.connector.connect(**st.secrets["snowflake"])
         mydata_rows=get_fruitloadList()
         st.dataframe(mydata_rows)
-#except:
-#st.error()
 
-#Adding textbox
 streamlit.header("Pick yor Fruit")
 user_text=streamlit.text_input("Pick yor Fruit")
 backfrom_function=ins_dataSnowFlake(user_text)
