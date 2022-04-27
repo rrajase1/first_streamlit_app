@@ -5,6 +5,12 @@ import pandas
 import requests
 import snowflake.connector
 from urllib.error import URLError
+#function def
+  def get_fruityvice_data(selected_fruit):
+    fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/"+selected_fruit)
+    fruityvice_normalized=pandas.json_normalize(fruityvice_response.json())
+    return streamlit.dataframe(fruityvice_normalized)
+  
 streamlit.title('my streamlit title\'s')
 streamlit.text('i can type anything here')
 streamlit.text('as much as i like ')
@@ -80,9 +86,3 @@ try:
     #function method end
 except URLError as e:
   streamlit.error()
-
-  #function def
-  def get_fruityvice_data(selected_fruit):
-    fruityvice_response = requests.get("https://www.fruityvice.com/api/fruit/"+selected_fruit)
-    fruityvice_normalized=pandas.json_normalize(fruityvice_response.json())
-    return streamlit.dataframe(fruityvice_normalized)
