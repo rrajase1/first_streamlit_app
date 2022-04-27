@@ -1,5 +1,7 @@
 import streamlit
+#import streamlit as st
 import pandas
+#import pandas as pd
 import requests
 import snowflake.connector
 streamlit.title('my streamlit title\'s')
@@ -49,5 +51,4 @@ streamlit.dataframe(mydata_row)
 #Adding textbox
 streamlit.header("Pick yor Fruit")
 user_text=streamlit.text_input("Pick yor Fruit")
-streamlit.write(my_model.predict(user_text))
 streamlit.text(user_text)
